@@ -22,7 +22,8 @@ namespace UnityEngine.XR.ARFoundation.Samples
         GameObject m_PlacedPrefab;
         bool placementCheck; // used to enable and disable object placement
         public UnityEvent onContentPlaced;
-        public GameObject m_ARCamera;
+        public GameObject Tutorial;
+        //public GameObject m_ARCamera;
         //public ARAnchor m_ARAnchor;
 
 
@@ -98,6 +99,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 {
                     spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
                     placementCheck = false;
+                    Tutorial.SetActive(false);
                     //onContentPlaced.Invoke();
                     DisablePlane();
                     Handheld.Vibrate();
@@ -107,6 +109,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 else
                 {
                     spawnedObject.transform.position = hitPose.position;
+                    Tutorial.SetActive(false);
                     //SetAnchors(hitPose);
                 }
             }
