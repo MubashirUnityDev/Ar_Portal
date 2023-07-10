@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: euphoria
-  productName: College AR Portal
+  productName: Genious Factory
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -274,7 +274,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: c5b56fd3cfd9d4639a46fff7e13a0d95, type: 3}
+      m_Icon: {fileID: 2800000, guid: bf15b1270210b4687888ce08a3f63ade, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

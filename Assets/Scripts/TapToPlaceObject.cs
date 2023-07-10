@@ -14,7 +14,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
     /// and moved to the hit position.
     /// </summary>
     [RequireComponent(typeof(ARRaycastManager))]
-    //[RequireComponent(typeof(ARAnchorManager))]
     public class TapToPlaceObject : MonoBehaviour
     {
         [SerializeField]
@@ -23,15 +22,14 @@ namespace UnityEngine.XR.ARFoundation.Samples
         bool placementCheck; // used to enable and disable object placement
         public UnityEvent onContentPlaced;
         public GameObject Tutorial;
-        //public GameObject m_ARCamera;
-        //public ARAnchor m_ARAnchor;
+        public GameObject m_ARCamera;
+        
 
 
         //Mubashir
 
-       // ARAnchorManager m_ARAnchorManager;
         ARPlaneManager m_ARPlaneManager;
-        //ARPlane SpawnedPlane;
+        
 
         /// <summary>
         /// The prefab to instantiate on touch.
@@ -49,10 +47,8 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         void Awake()
         {
-            //m_ARAnchorManager = GetComponent<ARAnchorManager>();
             m_RaycastManager = GetComponent<ARRaycastManager>();
             m_ARPlaneManager = GetComponent<ARPlaneManager>();
-            //m_ARPlaneManager.planesChanged += ARPlanesChanged;
 
 
         }
@@ -89,7 +85,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
             if (!TryGetTouchPosition(out Vector2 touchPosition))
                 return;
 
-            if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
+            if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinBounds))
             {
                 // Raycast hits are sorted by distance, so the first one
                 // will be the closest hit.
@@ -97,10 +93,10 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
                 if (spawnedObject == null)
                 {
-                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation) ;
+                    spawnedObject.transform.rotation = Quaternion.Euler(spawnedObject.transform.rotation.x, m_ARCamera.transform.rotation.y, spawnedObject.transform.rotation.z);
                     placementCheck = false;
                     Tutorial.SetActive(false);
-                    //onContentPlaced.Invoke();
                     DisablePlane();
                     Handheld.Vibrate();
                     m_ARPlaneManager.enabled = false;
@@ -110,7 +106,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 {
                     spawnedObject.transform.position = hitPose.position;
                     Tutorial.SetActive(false);
-                    //SetAnchors(hitPose);
                 }
             }
         }
@@ -123,11 +118,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
             }
         }
 
-        //void SetAnchors(Pose p)
-        //{
-        //    ARAnchor anchor = m_ARAnchorManager.AttachAnchor(SpawnedPlane, p);
-
-        //}
+        
 
         static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
@@ -135,13 +126,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         //Mubashir
 
-        //void ARPlanesChanged(ARPlanesChangedEventArgs args)
-        //{
-        //    if (args.added != null && args.added.Count > 0)
-        //    {
-        //        SpawnedPlane = args.added[0]; // Assuming you're spawning only one object on one plane
-        //                                      // Spawn the object on the plane
-        //    }
-        //}
+       
     }
 }
