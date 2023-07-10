@@ -94,7 +94,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
                 if (spawnedObject == null)
                 {
                     spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation) ;
-                    spawnedObject.transform.rotation = Quaternion.Euler(spawnedObject.transform.rotation.x, m_ARCamera.transform.rotation.y, spawnedObject.transform.rotation.z);
+                    //spawnedObject.transform.rotation = Quaternion.Euler(spawnedObject.transform.rotation.x, m_ARCamera.transform.rotation.y, spawnedObject.transform.rotation.z);
                     placementCheck = false;
                     Tutorial.SetActive(false);
                     DisablePlane();
