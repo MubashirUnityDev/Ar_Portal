@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 352}
+  m_AnchoredPosition: {x: 0, y: 391}
   m_SizeDelta: {x: 0, y: 145.9306}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6129358
@@ -1145,8 +1145,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 564.25543}
-  m_SizeDelta: {x: 203.3645, y: 234.6514}
+  m_AnchoredPosition: {x: 0, y: 636}
+  m_SizeDelta: {x: 262.8276, y: 262.8276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &167213760
 MonoBehaviour:
@@ -3454,8 +3454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 564.25543}
-  m_SizeDelta: {x: 203.3645, y: 234.6514}
+  m_AnchoredPosition: {x: 0, y: 636}
+  m_SizeDelta: {x: 262.8276, y: 262.8276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648271647
 MonoBehaviour:
@@ -5410,7 +5410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 352}
+  m_AnchoredPosition: {x: 0, y: 391.00006}
   m_SizeDelta: {x: 0, y: 145.9306}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &907697110
@@ -5983,7 +5983,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Find a good lighting and open space.
+  m_text: 'Find a good lighnting and open space.
 
     Slowly scan the area by moving
     your device.
@@ -6416,8 +6416,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 564.25543}
-  m_SizeDelta: {x: 203.3645, y: 234.6514}
+  m_AnchoredPosition: {x: 0, y: 636}
+  m_SizeDelta: {x: 262.8276, y: 262.8276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080185711
 MonoBehaviour:
@@ -11003,7 +11003,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 352}
+  m_AnchoredPosition: {x: 0, y: 391.00006}
   m_SizeDelta: {x: 0, y: 145.9306}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1883078976
@@ -11297,7 +11297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1917897540
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11313,11 +11313,11 @@ RectTransform:
   m_Father: {fileID: 14191212}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2513.5642, y: 3.3215}
-  m_SizeDelta: {x: 1579.4192, y: 2429.2017}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 534.5168, y: 2429.2017}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1917897541
 MonoBehaviour:
   m_ObjectHideFlags: 0
