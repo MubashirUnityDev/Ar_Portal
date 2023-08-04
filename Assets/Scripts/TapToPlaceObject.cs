@@ -21,16 +21,25 @@ namespace UnityEngine.XR.ARFoundation.Samples
         GameObject m_PlacedPrefab;
         bool placementCheck; // used to enable and disable object placement
         public UnityEvent onContentPlaced;
-        public GameObject Tutorial;
+        public GameObject HowToUse;
         public GameObject m_ARCamera;
-        
+
+
+        public TutorialController TutorialControl;
+        private bool isStep2;
+        private bool isStep3;
+
 
 
         //Mubashir
 
         ARPlaneManager m_ARPlaneManager;
-        
 
+        private void Start()
+        {
+            TutorialControl.SetStep(1);
+            
+        }
         /// <summary>
         /// The prefab to instantiate on touch.
         /// </summary>
@@ -78,6 +87,31 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         void Update()
         {
+            Debug.Log("Trackalbe Count: " + m_ARPlaneManager.trackables.count);
+            if(m_ARPlaneManager.trackables.count>0 )
+            {
+                if(placementCheck==false)
+                {
+                    if (isStep2 == false)
+                    {
+                        TutorialControl.SetStep(2);
+                    }
+                    isStep2 = true;
+                    
+                }else
+                {
+                    if (isStep3 == false)
+                    {
+                        TutorialControl.SetStep(3);
+                        Invoke("setTutorials",7);
+                    }
+                    isStep3 = true;
+                }
+
+
+
+            }
+
             if (placementCheck)
             {
                 return;
@@ -93,19 +127,22 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
                 if (spawnedObject == null)
                 {
-                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation) ;
+                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation) ; //Critical
                     //spawnedObject.transform.rotation = Quaternion.Euler(spawnedObject.transform.rotation.x, m_ARCamera.transform.rotation.y, spawnedObject.transform.rotation.z);
                     placementCheck = false;
-                    Tutorial.SetActive(false);
+                    //Tutorial.SetActive(false);
                     DisablePlane();
                     Handheld.Vibrate();
                     m_ARPlaneManager.enabled = false;
+                    
                     placementCheck = true ;
+                    
+
                 }
                 else
                 {
                     spawnedObject.transform.position = hitPose.position;
-                    Tutorial.SetActive(false);
+                    //Tutorial.SetActive(false);
                 }
             }
         }
@@ -126,6 +163,12 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         //Mubashir
 
+
+        public void setTutorials()
+        {
+            TutorialControl.DisableAllSteps();
+        }
        
     }
+
 }

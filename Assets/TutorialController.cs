@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class TutorialController : MonoBehaviour
 {
-    public GameObject Step1;
-    public GameObject Step2;
+    public List<GameObject> TutorialSteps;
 
-    public void aStep1()
+    private void Awake()
     {
-        Step1.SetActive(false);
-        Step2.SetActive(true);
+        if (TutorialSteps != null)
+        {
+            DisableAllSteps();
+            
+        }
+    }
+    public void SetStep(int StepNumber)
+    {
 
+        if(TutorialSteps!=null)
+        {
+            Debug.Log("Set Step Called : " + (StepNumber));
+            DisableAllSteps();
+
+            TutorialSteps[StepNumber - 1].SetActive(true);
+            Debug.Log("Step Log: Enabling Step " + (StepNumber));
+
+        }
+
+        Debug.Log("Step3 is Currently : " + TutorialSteps[2].activeSelf);
     }
 
-    
+    public void DisableAllSteps()
+    {
+        foreach (GameObject g in TutorialSteps)
+        {
+            g.SetActive(false);
+        }
+    }
+
+
+
 }
